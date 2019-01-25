@@ -64,6 +64,7 @@ void m5_dist_toggle_sync(void);
 void m5_add_symbol(uint64_t addr, char *symbol);
 void m5_load_symbol();
 void m5_panic(void);
+uint32_t m5_mynewop(uint32_t arg1, uint32_t arg2);
 void m5_work_begin(uint64_t workid, uint64_t threadid);
 void m5_work_end(uint64_t workid, uint64_t threadid);
 
