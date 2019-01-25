@@ -589,6 +589,18 @@ switchcpu(ThreadContext *tc)
     exitSimLoop("switchcpu");
 }
 
+// Add the instruction’s functional simulation implementation. 
+uint32_t
+mynewop(ThreadContext *tc, uint32_t arg1, uint32_t arg2)
+{
+    if (!FullSystem) {
+        panicFsOnlyPseudoInst("mynewop");
+        return 0;
+    }
+
+    return ((arg1<<arg2) | (arg1 >> (32 - arg2));
+}
+
 void
 togglesync(ThreadContext *tc)
 {
