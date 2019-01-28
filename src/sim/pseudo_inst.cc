@@ -609,7 +609,7 @@ mynewop(ThreadContext *tc, uint32_t arg1, uint32_t arg2)
 
     nanosleep(&tim , &tim2);
 
-    return ((arg1<<arg2) | (arg1 >> (32 - arg2));
+    return ((arg1<<arg2) | (arg1 >> (32 - arg2)));
 }
 
 void
