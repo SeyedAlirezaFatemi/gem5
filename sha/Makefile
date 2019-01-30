@@ -27,4 +27,4 @@ sha:  sha_driver.o sha.o
 	# strip $@
 
 clean:
-	rm -rf $(TARGET)
+	rm -rf $(TARGET) *.o sha output*
