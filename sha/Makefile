@@ -4,7 +4,7 @@
 # To use NIST's modified SHA of 7/11/94, define USE_MODIFIED_SHA
 
 CC = gcc
-ISA_FILE = ./m5op_x86.S
+ISA_FILE = ./m5op_arm.S
 CFLAGS = -static -O0 -Wall
 
 # sha:  sha_driver.o sha.o
