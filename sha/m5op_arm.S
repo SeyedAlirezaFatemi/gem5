@@ -47,7 +47,7 @@
 .thumb
 #endif
 
-#include <gem5/asm/generic/m5ops.h>
+#include "m5ops.h"
 
 .text
 

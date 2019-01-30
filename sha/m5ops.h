@@ -126,6 +126,7 @@
     M5OP(m5_switch_cpu, M5OP_SWITCH_CPU, 0);                    \
     M5OP(m5_add_symbol, M5OP_ADD_SYMBOL, 0);                    \
     M5OP(m5_panic, M5OP_PANIC, 0);                              \
+    M5OP(m5_mynewop, mynewop_func, 0);                          \
     M5OP(m5_work_begin, M5OP_WORK_BEGIN, 0);                    \
     M5OP(m5_work_end, M5OP_WORK_END, 0);                        \
     M5OP(m5_dist_toggle_sync, M5OP_DIST_TOGGLE_SYNC, 0);
