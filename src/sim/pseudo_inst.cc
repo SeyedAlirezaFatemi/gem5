@@ -598,11 +598,6 @@ switchcpu(ThreadContext *tc)
 uint32_t
 mynewop(ThreadContext *tc, uint32_t arg1, uint32_t arg2)
 {
-    if (!FullSystem) {
-        panicFsOnlyPseudoInst("mynewop");
-        return 0;
-    }
-
     struct timespec tim, tim2;
     tim.tv_sec = 0;
     tim.tv_nsec = 10;
