@@ -10,7 +10,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "sha.h"
-
+#include "m5op.h"
 /* SHA f()-functions */
 
 #define f1(x,y,z)	((x & y) | (~x & z))
@@ -27,7 +27,7 @@
 
 /* 32-bit rotate */
 
-#define ROT32(x,n)	((x << n) | (x >> (32 - n)))
+#define ROT32(x,n) m5_mynewop((uint32_t)x, (uint32_t)n)
 
 #define FUNC(n,i)						\
     temp = ROT32(A,5) + f##n(B,C,D) + E + W[i] + CONST##n;	\

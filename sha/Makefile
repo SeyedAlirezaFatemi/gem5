@@ -3,28 +3,12 @@
 # To make smaller object code, but run a little slower, don't use UNROLL_LOOPS.
 # To use NIST's modified SHA of 7/11/94, define USE_MODIFIED_SHA
 
-ARCH = arm
-TARGET = ./bin/sha
+CC = gcc
+CFLAGS = -O3 -Wall
 
-ifeq ($(ARCH),x86)
-    CXX = g++
-    ISA_FILE =
-else
-    CXX =arm-linux-gnueabi-g++
-    ISA_FILE = ./m5op_arm.S
-endif
-
-# CC = gcc
-# ISA_FILE = ./m5op_arm.S
-# CFLAGS = -static -O0 -Wall
-
-# sha:  sha_driver.o sha.o
-# 	$(CC) -o $@ sha_driver.o sha.o
-# 	strip $@
-
-sha:  sha_driver.o sha.o
-	$(CXX) -static -O0 -o $(TARGET) sha_driver.c sha.c -lm $(ISA_FILE)
-	# strip $@
+sha:	sha_driver.o sha.o
+	$(CC) -o $@ sha_driver.o sha.o
+	strip $@
 
 clean:
-	rm -rf $(TARGET) *.o sha output*
+	rm -rf *.o sha output*
